@@ -20,9 +20,10 @@ class IG_Business:
         driver.implicitly_wait(10)
         source=driver.page_source
         if 'is_business_account":true' in source:
-            print(channel_name," is a public account")
+            print("{",channel_name,' ', url,"}" ," is not a public account")
             return 'Public Account',url
         else:
+            print("{"channel_name,' ', url,"}"," is not a public account")
             return 'Not Public Account',url
 
 
